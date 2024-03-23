@@ -140,29 +140,7 @@ router
   .get(async (req, res) => {
     if (req.session.user){
         let user = await userData.getUser(req.session.user.emailAddress);
-        let revs = undefined;
-        try{
-            revs = await userData.getReviewsForUser(user);
-        }catch(e){
-            if (req.session.user){
-                return res.status(500).render("error", {title: "Error", notLoggedIn: false, firstName: req.session.user.firstName, code: 500, errorText: e})
-            }
-            else{
-                return res.status(500).render("error", {title: "Error", notLoggedIn: true, code: 500, errorText: e})
-            }
-        }
-        let ss = undefined;
-        try{
-            ss = await userData.getShowsForUser(user);
-        }catch(e){
-            if (req.session.user){
-                return res.status(500).render("error", {title: "Error", notLoggedIn: false, firstName: req.session.user.firstName, code: 500, errorText: e})
-            }
-            else{
-                return res.status(500).render("error", {title: "Error", notLoggedIn: true, code: 500, errorText: e})
-            }
-        }
-        return res.render('useraccount', {title: "User Account", notLoggedIn: false, firstName: req.session.user.firstName, lastName: req.session.user.lastName, review: revs, savedshows: ss });
+        return res.render('useraccount', {title: "User Account", notLoggedIn: false, firstName: req.session.user.firstName, lastName: req.session.user.lastName});
     }
     else{
         return res.status(401).render("error", {title: "Error", notLoggedIn: true, code: 401, errorText: "You must be logged in to access this page."})
