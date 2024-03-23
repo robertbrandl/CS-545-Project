@@ -1,0 +1,44 @@
+<h1>{{title}}</h1>
+<h2>First Name: {{firstName}}</h2>
+<h2>Last Name: {{lastName}}</h2>
+<form id="changePasswordButtonForm" action="/user/changepassword" method="GET">
+    <label for="changePasswordButton">Click here if you would like to change your password to login:</label>
+    <button id="changePasswordButton">Change your password.</button>
+</form>
+<h2>Your Reviews: </h2>
+{{#if review}}
+    {{#each review}}
+        <h3>{{title}}</h3>
+        <h4>Show Title: {{showTitle}}</h4>
+        <h4>By: {{authorFirstName}} {{authorLastName}}</h4>
+        <h4>Rating: {{rating}}</h4>
+        <p>{{content}}</p>
+        {{#if watchAgain}}
+            <h4>Would you watch again? YES!</h4>
+        {{else}}
+            <h4>Would you watch again? NO!</h4>
+        {{/if}}
+        <form class="editReviewSubmitForm" action="/reviews/edit/{{_id}}" method="GET">
+            <label>Edit this review:</label> 
+            <button type="submit" class="editReviewSubmitButton">Edit Review</button>
+        </form>
+        <form class="deleteReviewForm" action="/reviews/delete/{{_id}}" method="GET">
+            <label>Delete this review:</label> 
+            <button type="submit" class="deleteReviewButton">Delete Review</button>
+        </form>
+    {{/each}}
+{{else}}
+    <h3>None Posted Yet!</h3>
+{{/if}}
+<h2>Your Want to Watch List: </h2>
+{{#if savedshows}}
+    {{#each savedshows}}
+        <h3>{{name}}</h3>
+        <form class="removeShowForm" action="/user/removeshow/{{apiId}}" method="GET">
+            <label>Remove this show:</label> 
+            <button type="submit" class="removeShowButton">Delete Show</button>
+        </form>
+    {{/each}}
+{{else}}
+    <h3>No shows added yet!</h3>
+{{/if}}

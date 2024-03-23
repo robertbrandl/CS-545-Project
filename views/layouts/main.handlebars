@@ -1,0 +1,31 @@
+{{! This will be your default layout for all handlebars file rendered. This will be inherited by all other templates. }}
+{{! Refer lecture code to learn more on how this works: https://github.com/stevens-cs546-cs554/CS-546/tree/master/lecture_08/code/HTML_Templating }}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/public/css/main.css">
+</head>
+<body>
+    <h1><a href="/">Civics Trivia</a></h1>
+    <nav class="top-right-nav">
+        {{#if notLoggedIn}}
+            <a href = "/user/login"> Log-In </a> <br>
+            <a href = "/user/register"> Create an Account </a>
+        {{else}}
+            <p class="nameMessage"> Hi, {{firstName}}!</p> <br>
+            <a href = "/user/logout"> Log-Out </a> <br>
+            <a href = "/user/account"> See Your Account! </a>
+        {{/if}}
+    </nav>
+    <div class="form-group hidden" id="error-container-main">
+        <div class="text-goes-here-search">
+        </div>
+    </div>
+    {{{body}}}
+    <script src='/public/js/client_side_validation.js'></script>
+</body>
+</html>
