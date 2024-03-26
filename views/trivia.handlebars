@@ -1,0 +1,18 @@
+{{!--
+
+registration handelbars
+
+--}}
+<h1>{{title}}</h1>
+<div class="form-group hidden" id="error-container">
+        <div class="text-goes-here">
+        </div>
+</div>
+{{#if error}} 
+<div class="error">{{msg}}</div> 
+{{/if}}
+<p><a href="/bank">Want to learn more before taking the quiz? Visit the Knowledge Bank!</a></p>
+
+<form id="trivia-form" method="POST" action="/trivia"> 
+
+</form> 
