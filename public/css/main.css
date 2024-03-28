@@ -8,6 +8,10 @@ main {
     max-width: 75%;
     margin: auto;
 }
+.element {
+    display: block; /* Ensures that the element behaves like a block-level element */
+    text-align: center; 
+}
 .top-right-nav {
     position: fixed;
     top: 10px;
