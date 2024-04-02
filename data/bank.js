@@ -1,16 +1,16 @@
 const democracyFacts = [
     ["What is the supreme law of the land?", "The Constitution"],
-    ["What does the Constitution do?", "Sets up the government, Defines the government, Protects basic rights of Americans"],
+    ["What does the Constitution do?", "Sets up/defines the role of government and protects the basic rights of Americans"],
     ["The idea of self-government is in the first three words of the Constitution. What are these words?", "We the People"],
-    ["What is an amendment?", "A change (to the Constitution) or an addition (to the Constitution)"],
+    ["What is an amendment?", "A change or addition to the Constitution"],
     ["What do we call the first ten amendments to the Constitution?", "The Bill of Rights"],
-    ["What is one right or freedom from the First Amendment?", "Speech, Religion, Assembly, Press, Petition the government"],
+    ["What are the five rights or freedoms from the First Amendment?", "Speech, Religion, Assembly, Press, Petition the government"],
     ["How many amendments does the Constitution have?", "Twenty-seven (27)"],
-    ["What did the Declaration of Independence do?", "Announced our independence (from Great Britain), Declared our independence (from Great Britain), Said that the United States is free (from Great Britain)"],
-    ["What are two rights in the Declaration of Independence?", "Life, Liberty, Pursuit of happiness"],
+    ["What did the Declaration of Independence do?", "Announced our independence from Great Britain"],
+    ["What are the three rights in the Declaration of Independence?", "Life, Liberty, and the Pursuit of Happiness"],
     ["What is freedom of religion?", "You can practice any religion, or not practice a religion."],
     ["What is the economic system in the United States?", "Capitalist economy or market economy"],
-    ["What is the “rule of law”?", "Everyone must follow the law, Leaders must obey the law, Government must obey the law, No one is above the law."]
+    ["What is the “rule of law”?", "Everyone must follow the law, including the government and its officials. No one is above the law."]
 ];
 
 const systemFacts = [
@@ -44,16 +44,16 @@ const systemFacts = [
 ];
 
 const citizenFacts = [
-    ["There are four amendments to the Constitution about who can vote. Describe one of them.", "Citizens eighteen (18) and older (can vote), You don’t have to pay (a poll tax) to vote, Any citizen can vote. (Women and men can vote.), A male citizen of any race (can vote)"],
+    ["There are four amendments to the Constitution about who can vote. What are they?", "Citizens eighteen (18) and older can vote, You don’t have to pay (a poll tax) to vote, Any citizen can vote. (Women and men can vote.), A male citizen of any race (can vote)"],
     ["What is one responsibility that is only for United States citizens?", "Serve on a jury, Vote in a federal election"],
-    ["Name one right only for United States citizens.", "Vote in a federal election, Run for federal office"],
-    ["What are two rights of everyone living in the United States?", "Freedom of expression, Freedom of speech, Freedom of assembly, Freedom to petition the government, Freedom of religion, The right to bear arms"],
-    ["What do we show loyalty to when we say the Pledge of Allegiance?", "The United States, The flag"],
-    ["What is one promise you make when you become a United States citizen?", "Give up loyalty to other countries, Defend the Constitution and laws of the United States, Obey the laws of the United States, Serve in the U.S. military (if needed), Serve (do important work for) the nation (if needed), Be loyal to the United States"],
-    ["How old do citizens have to be to vote for President?", "Eighteen (18) and older"],
-    ["What are two ways that Americans can participate in their democracy?", "Vote, Join a political party, Help with a campaign, Join a civic group, Join a community group, Give an elected official your opinion on an issue, Call Senators and Representatives, Publicly support or oppose an issue or policy, Run for office, Write to a newspaper"],
+    ["What are two rights only for United States citizens.", "Vote in a federal election and run for federal office"],
+    ["What are some rights of everyone living in the United States?", "Freedom of expression, Freedom of speech, Freedom of assembly, Freedom to petition the government, Freedom of religion, The right to bear arms"],
+    ["What do we show loyalty to when we say the Pledge of Allegiance?", "The United States or The flag"],
+    ["What are some promises you make when you become a United States citizen?", "Give up loyalty to other countries, Defend the Constitution and laws of the United States, Obey the laws of the United States, Serve in the U.S. military (if needed), Serve (do important work for) the nation (if needed), Be loyal to the United States"],
+    ["How old do citizens have to be to vote for President?", "Eighteen (18)"],
+    ["What are some ways that Americans can participate in their democracy?", "Vote, Join a political party, Help with a campaign, Join a civic group, Join a community group, Give an elected official your opinion on an issue, Call Senators and Representatives, Publicly support or oppose an issue or policy, Run for office, Write to a newspaper"],
     ["When is the last day you can send in federal income tax forms?", "April 15"],
-    ["When must all men register for the Selective Service?", "At age eighteen (18), Between eighteen (18) and twenty-six (26)"]
+    ["When must all men register for the Selective Service?", "Between eighteen (18) and twenty-six (26)"]
 ];
 
 const historyFacts = [
@@ -76,15 +76,15 @@ const historyFacts = [
     ["Name one problem that led to the Civil War.", "Slavery, Economic reasons, States’ rights"],
     ["What was one important thing that Abraham Lincoln did?", "Freed the slaves (Emancipation Proclamation), Saved (or preserved) the Union, Led the United States during the Civil War"],
     ["What did the Emancipation Proclamation do?", "Freed the slaves, Freed slaves in the Confederacy, Freed slaves in the Confederate states, Freed slaves in most Southern states"],
-    ["What did Susan B. Anthony do?", "Fought for women’s rights, Fought for civil rights"],
-    ["Name one war fought by the United States in the 1900s.", "World War I, World War II, Korean War, Vietnam War, (Persian) Gulf War"],
+    ["What did Susan B. Anthony do?", "Fought for women’s rights and civil rights"],
+    ["What are some wars fought by the United States in the 1900s.", "World War I, World War II, Korean War, Vietnam War, (Persian) Gulf War"],
     ["Who was President during World War I?", "Woodrow Wilson"],
     ["Who was President during the Great Depression and World War II?", "Franklin Roosevelt"],
     ["Who did the United States fight in World War II?", "Japan, Germany, and Italy"],
     ["Before he was President, Eisenhower was a general. What war was he in?", "World War II"],
     ["During the Cold War, what was the main concern of the United States?", "Communism"],
-    ["What movement tried to end racial discrimination?", "Civil rights (movement)"],
-    ["What did Martin Luther King, Jr. do?", "Fought for civil rights, Worked for equality for all Americans"],
+    ["What movement tried to end racial discrimination?", "The civil rights movement"],
+    ["What did Martin Luther King, Jr. do?", "He fought for civil rights and worked for equality for all Americans"],
     ["What major event happened on September 11, 2001, in the United States?", "Terrorists attacked the United States"]
 ];
 
