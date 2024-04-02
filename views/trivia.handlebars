@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <main>
     <h1>{{title}}</h1>
     <div class="form-group hidden" id="error-container">
         <div class="text-goes-here">
@@ -33,11 +34,13 @@
             <input type="radio" id="answer{{@index}}_option4" name="answer{{@index}}" value="{{this.[4]}}">
             <label for="answer{{@index}}_option4">{{this.[4]}}</label><br>
         </div>
+        <br>
         {{/each}}
         {{#if questions}} 
             <button type="submit">Submit</button>
         {{/if}}
     </form> 
+    </main>
 </body>
 
 </html>

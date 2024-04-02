@@ -37,6 +37,41 @@ router.route('').get(async (req, res) => {
             "James Madison",
             "George Washington",
             "John Adams"
+        ],
+        [
+            "What are the first 10 amendments of the U.S. Constitution collectively called?",
+            "The Declaration of Independence",
+            "The Bill of Rights",
+            "The Core Rights Treaty",
+            'The Federalist Papers'
+        ],
+        [
+            "At what age can men register for Selective Service?",
+            "23",
+            "16",
+            "18",
+            "15"
+        ],
+        [
+            "Which of the following is not a position in the President's Cabinet?",
+            "Secretary of the Interior",
+            "Secretary of Energy",
+            "Secretary of Commerce",
+            "Secretary of Military Affairs"
+        ],
+        [
+            "What year was the Declaration of Independence adopted?",
+            "1789",
+            "1803",
+            "1776",
+            "1769"
+        ],
+        [
+            "Which of the following best describes the economic practice of the United States?",
+            "Capitalism",
+            "Mercantilism",
+            "Trickle-Down Economics",
+            "Separatism"
         ]
 
     ];
@@ -54,7 +89,12 @@ router.route('').get(async (req, res) => {
         ["Right to vote", "Democracy"],
         ["6 years", "System of Government"],
         ["Serve on a jury", "Rights/Responsibilites"],
-        ["George Washington", "History"]
+        ["George Washington", "History"],
+        ["The Bill of Rights", "Democracy"],
+        ["18", "Rights/Responsibilites"],
+        ["Secretary of Military Affairs", "System of Government"],
+        ["1776", "History"],
+        ["Capitalism", "Democracy"]
     ];
     let numCorrect = 0;
     let incorrectCats = [];//here we can store the categories for the wrong questions and include links at the end of the quiz
