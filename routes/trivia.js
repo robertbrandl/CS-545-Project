@@ -130,12 +130,40 @@ router.route('').get(async (req, res) => {
     }
     console.log(numCorrect);
     incorrectCats.filter((value, index, self) => self.indexOf(value) === index);
+    let modqs = [];
+    let count = 0;
+    for (let x of questions){
+        let newEl = x.slice(0,2);
+        const key = Object.keys(quizData)[count];
+        const value = quizData[key];
+        for (let j = 2; j <= 5; j++) {
+            if (x[j] === correctAns[count][0]){
+                if (x[j] === value){
+                    newEl.push([x[j], true, true]);
+                }
+                else{
+                    newEl.push([x[j], true, false]);
+                }
+            }
+            else{
+                if (x[j] === value){
+                    newEl.push([x[j], false, true]);
+                }
+                else{
+                    newEl.push([x[j], false, false]);
+                }
+            }
+        }
+        modqs.push(newEl)
+        count++;
+    }
+    console.log(modqs);
     if (req.session.user){
         await triviaData.addScore(req.session.user.emailAddress, numCorrect);
-        return res.render('trivia', {title: "Civics Trivia Quiz", notLoggedIn: false, firstName: req.session.user.firstName, questions: questions, selectedAnswers: correctAns})
+        return res.render('trivia', {title: "Civics Trivia Quiz", notLoggedIn: false, firstName: req.session.user.firstName, questions: questions, submitted: true, score: numCorrect, modqs})
     }
     else{
-        return res.render('trivia', {title: "Civics Trivia Quiz", notLoggedIn: true, questions: questions, selectedAnswers: correctAns})
+        return res.render('trivia', {title: "Civics Trivia Quiz", notLoggedIn: true, questions: questions, submitted: true, score: numCorrect, modqs})
     }
 
 });

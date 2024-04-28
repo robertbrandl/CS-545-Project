@@ -16,7 +16,16 @@ app.use(express.urlencoded({extended: true}));
 
 app.engine('handlebars', exphbs.engine({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+const compareAnswers = (userAnswer, correctAnswer) => {
+  // Check if the user's answer matches the correct answer
+  return userAnswer === correctAnswer;
+};
 
+// Make the compareAnswers helper function available to Handlebars templates
+app.use((req, res, next) => {
+  res.locals.compareAnswers = compareAnswers;
+  next();
+});
 app.use(session({
   name: 'AuthState',
   secret: 'some secret string!',

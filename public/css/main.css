@@ -18,6 +18,11 @@ h2.underline{
     text-shadow: 3px 3px 6px #110356;
     
 }
+.score {
+    text-align: center; 
+    font-weight: bold;
+    font-size: 2rem;
+}
 .top-right-nav {
     position: fixed;
     top: 10px;
@@ -43,6 +48,14 @@ a:hover {
 
 a:active {
     color: #DDCC77;
+}
+
+.correct{
+    color: #08F757;
+}
+
+.incorrect{
+    color: #FB0303;
 }
 
 h1 {
