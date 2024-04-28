@@ -11,7 +11,7 @@ router.route('').get(async (req, res) => {
             "Date of Statehood"
         ],
         [
-            "Which one right or freedom is not in the First Amendment to the U.S. Constitution",
+            "Which one right or freedom is not in the First Amendment to the U.S. Constitution?",
             "Freedom of the press",
             "Freedom of Religion",
             "Right to petition the government",
@@ -75,6 +75,11 @@ router.route('').get(async (req, res) => {
         ]
 
     ];
+    questions = questions.map((questionArray, index) => {
+        const questionNumber = index + 1;
+        questionArray.unshift(questionNumber);
+        return questionArray;
+    });
     if (req.session.user){
         return res.render('trivia', {title: "Civics Trivia Quiz", notLoggedIn: false, firstName: req.session.user.firstName, questions: questions});
     }
@@ -99,12 +104,30 @@ router.route('').get(async (req, res) => {
     let numCorrect = 0;
     let incorrectCats = [];//here we can store the categories for the wrong questions and include links at the end of the quiz
     const quizData = req.body;
-    if (!quizData || Object.keys(quizData).length === 0) {
-      return res
-        .status(400)
-        .json({status:'error', message: 'Must complete all quiz questions'});
+    if (!quizData || Object.keys(quizData).length !== 10) {
+        if (req.session.user){
+            return res
+            .status(400)
+            .render('error',{code:400, errorText: 'Must complete all quiz questions', notLoggedIn: false, firstName: req.session.user.firstName});
+        }else{
+            return res
+            .status(400)
+            .render('error',{code:400, errorText: 'Must complete all quiz questions', notLoggedIn: true});
+        }
     }
-
+    console.log(quizData)
+    let ind = 0;
+    for (let key in quizData) {
+        if (quizData[key] === correctAns[ind][0]){
+            numCorrect++;
+        }
+        else{
+            incorrectCats.push(correctAns[ind][1]);
+        }
+        ind++;
+    }
+    console.log(numCorrect);
+    incorrectCats.filter((value, index, self) => self.indexOf(value) === index);
 
 });
 export default router;

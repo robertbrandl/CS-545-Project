@@ -24,15 +24,15 @@
     <form id="trivia-form" method="POST" action="/trivia"> 
         {{#each questions}}
         <div class="question">
-            <p>{{@index}}. {{this.[0]}}</p>
-            <input type="radio" id="answer{{@index}}_option1" name="answer{{@index}}" value="{{this.[1]}}">
-            <label for="answer{{@index}}_option1">{{this.[1]}}</label><br>
-            <input type="radio" id="answer{{@index}}_option2" name="answer{{@index}}" value="{{this.[2]}}">
-            <label for="answer{{@index}}_option2">{{this.[2]}}</label><br>
-            <input type="radio" id="answer{{@index}}_option3" name="answer{{@index}}" value="{{this.[3]}}">
-            <label for="answer{{@index}}_option3">{{this.[3]}}</label><br>
-            <input type="radio" id="answer{{@index}}_option4" name="answer{{@index}}" value="{{this.[4]}}">
-            <label for="answer{{@index}}_option4">{{this.[4]}}</label><br>
+            <p>{{this.[0]}}. {{this.[1]}}</p>
+            <input type="radio" id="answer{{@index}}_option1" name="answer{{@index}}" value="{{this.[2]}}">
+            <label for="answer{{@index}}_option1">{{this.[2]}}</label><br>
+            <input type="radio" id="answer{{@index}}_option2" name="answer{{@index}}" value="{{this.[3]}}">
+            <label for="answer{{@index}}_option2">{{this.[3]}}</label><br>
+            <input type="radio" id="answer{{@index}}_option3" name="answer{{@index}}" value="{{this.[4]}}">
+            <label for="answer{{@index}}_option3">{{this.[4]}}</label><br>
+            <input type="radio" id="answer{{@index}}_option4" name="answer{{@index}}" value="{{this.[5]}}">
+            <label for="answer{{@index}}_option4">{{this.[5]}}</label><br>
         </div>
         <br>
         {{/each}}
