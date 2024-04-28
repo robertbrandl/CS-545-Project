@@ -33,9 +33,7 @@ const registerUser = async (
         lastName: lname,
         emailAddress: email,
         password: hash,
-        reviews: [],
-        shows: [],
-        userUpvotes: []
+        quizScores: []
     }
     const insertInfo = await userCollection.insertOne(newUser);
     if (!insertInfo.acknowledged || !insertInfo.insertedId)
@@ -119,4 +117,4 @@ const changePassword = async (
     return {changed:true, updatedInfo:updatedInfo} 
 }
 
-export default {registerUser, loginUser, getUser,  changePassword};
+export default {registerUser, loginUser, getUser, changePassword};
