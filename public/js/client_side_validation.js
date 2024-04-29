@@ -92,9 +92,9 @@ if (loginForm) {
         const errorContainer = document.getElementById('error-container');
         const errorTextElement = errorContainer.querySelector('.text-goes-here');
         const otherErrorTextElement = document.querySelector('.error');
-        const formData = new FormData();
-        formData.append('email', email);
-        formData.append('password', password);
+        const spinner = document.getElementById('loading-spinner');
+
+        spinner.classList.remove('hidden');
 
         fetch('/user/login', {
             method: 'POST',
@@ -108,8 +108,9 @@ if (loginForm) {
         })
         .then(response => response.json()) 
         .then(data => {
+            spinner.classList.add('hidden');
+
             try {
-                
                 const jsonData = JSON.parse(data);
                 if (jsonData.status === 'success') {
                     window.location.href = '/';  
@@ -125,6 +126,7 @@ if (loginForm) {
             }
         })
         .catch(error => {
+            spinner.classList.add('hidden');
             console.error('There was a problem with the fetch operation:', error);
         });
     });
@@ -136,15 +138,18 @@ if (regForm) {
     const password= document.getElementById('passwordInput');
     const confirmPassword = document.getElementById('confirmPasswordInput');
     const errorContainer = document.getElementById('error-container');
-    const errorTextElement =
-    errorContainer.getElementsByClassName('text-goes-here')[0];
-    const otherErrorTextElement =
-      document.getElementsByClassName('error')[0];
+    const errorTextElement = errorContainer.getElementsByClassName('text-goes-here')[0];
+    const otherErrorTextElement = document.getElementsByClassName('error')[0];
+    const spinner = document.getElementById('loading-spinner');
+
     regForm.addEventListener('submit', (event) =>{
-        try{
+        spinner.classList.remove('hidden');
+
+        try {
             errorContainer.classList.add('hidden');
             let registerR = checkRegisterInput(firstName.value, lastName.value, email.value, password.value, confirmPassword.value);
-        }catch(e){
+            
+        } catch(e) {
             event.preventDefault();
             const message = typeof e === 'string' ? e : e.message;
             errorTextElement.textContent = "Error: " + e;
@@ -152,6 +157,7 @@ if (regForm) {
             if (otherErrorTextElement){
                 otherErrorTextElement.style.display = "none";
             }
+            spinner.classList.add('hidden');
         }
     });
 }

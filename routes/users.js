@@ -71,7 +71,7 @@ router
       return res.status(400).render('register', {title: "Register", notLoggedIn: true, error: true, msg: "Error: " + e});
     }
     if (result.insertedUser === true){
-      return res.redirect("/login");
+      return res.redirect("/user/login");
     }
     else{
       return res.status(500).render('register', {title: "Register", notLoggedIn: true, error: true, msg: "Internal Server Error"});

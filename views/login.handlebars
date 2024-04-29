@@ -1,23 +1,26 @@
-{{!--
-
-login form handlebar template
-
---}}
+{{!-- login form handlebar template --}}
 <h1>{{title}}</h1>
 <div class="form-group hidden" id="error-container">
-        <div class="text-goes-here">
-        </div>
+    <div class="text-goes-here"></div>
 </div>
-{{#if error}} 
-<div class="error">{{msg}}</div> 
-{{/if}} 
-<form id="login-form" method="POST" action="/user/login"> 
-    <label for="emailAddressInput">Email Address:</label> 
-    <input type="email" id="emailAddressInput" name="emailAddressInput" autocomplete="given-email" > <br />
+{{#if error}}
+    <div class="error">{{msg}}</div>
+{{/if}}
+
+<form id="login-form" method="POST" action="/user/login">
+    <label for="emailAddressInput">Email Address:</label>
+    <input type="email" id="emailAddressInput" name="emailAddressInput" autocomplete="given-email"> <br />
     
-    <label for="passwordInput">Password:</label> 
+    <label for="passwordInput">Password:</label>
     <input type="password" id="passwordInput" name="passwordInput" autocomplete="given-password"> <br />
-    <button type="submit">Login</button> <br />
-</form> 
+    
+    <button type="submit" id="login-button">Login</button> <br />
+</form>
+<br />
+<!-- Loading element -->
+<div id="loading-spinner" class="hidden">
+  <div class="spinner"></div>
+</div>
+
 <br />
 <a href="/user/register"><strong>Click here to register!</strong></a>

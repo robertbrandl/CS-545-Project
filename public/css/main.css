@@ -118,7 +118,26 @@ input {
 li{
     margin-bottom: 10px;
 }
-
+/* CSS for the spinner */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.15);
+    border-left-color: #AA4499;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* CSS to hide the spinner initially */
+  .hidden {
+    display: none;
+  }
+  
 button {
     /* referenced https://blog.logrocket.com/how-to-style-forms-with-css-a-beginners-guide/ */
     /* remove default behavior */
