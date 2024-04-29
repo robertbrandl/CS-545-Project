@@ -5,3 +5,9 @@
     <label for="changePasswordButton">Click here if you would like to change your password to login:</label>
     <button id="changePasswordButton">Change your password.</button>
 </form>
+<h3>Past Trivia Quiz Scores:</h3>
+<ul>
+  {{#each scores}}
+    <li>{{ this }}</li>
+  {{/each}}
+</ul>

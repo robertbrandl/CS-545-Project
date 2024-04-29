@@ -106,7 +106,7 @@ if (loginForm) {
                 passwordInput: password
             })
         })
-        .then(response => response.text()) 
+        .then(response => response.json()) 
         .then(data => {
             try {
                 

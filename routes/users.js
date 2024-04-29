@@ -140,7 +140,7 @@ router
   .get(async (req, res) => {
     if (req.session.user){
         let user = await userData.getUser(req.session.user.emailAddress);
-        return res.render('useraccount', {title: "User Account", notLoggedIn: false, firstName: req.session.user.firstName, lastName: req.session.user.lastName});
+        return res.render('useraccount', {title: "User Account", notLoggedIn: false, firstName: req.session.user.firstName, lastName: req.session.user.lastName, scores: user.quizScores});
     }
     else{
         return res.status(401).render("error", {title: "Error", notLoggedIn: true, code: 401, errorText: "You must be logged in to access this page."})
