@@ -119,6 +119,12 @@
         <br>
         {{/each}}
             <p class="score">Score: {{score}}/10</p>
+            {{#if badCategories}}
+            <h3>Categories You Could Improve On:</h3>
+            {{#each badCategories}}
+            <li class="cats">{{this}}</li>
+            {{/each}}
+            {{/if}}
     {{/if}}
     </main>
 </body>

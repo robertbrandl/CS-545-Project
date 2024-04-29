@@ -92,16 +92,16 @@ router.route('').get(async (req, res) => {
 .post(async (req, res) => {
     //array of arrays (each element array has two elements: the correct answer and the category the question belongs to)
     let correctAns = [
-        ["State's population", "System of Government"],
-        ["Right to vote", "Democracy"],
-        ["6 years", "System of Government"],
-        ["Serve on a jury", "Rights/Responsibilites"],
-        ["George Washington", "History"],
-        ["The Bill of Rights", "Democracy"],
-        ["18", "Rights/Responsibilites"],
-        ["Secretary of Military Affairs", "System of Government"],
-        ["1776", "History"],
-        ["Capitalism", "Democracy"]
+        ["State's population", "The U.S. System of Government"],
+        ["Right to vote", "Understanding American Democracy"],
+        ["6 years", "The U.S. System of Government"],
+        ["Serve on a jury", "U.S. Citizen Rights and Responsibilities"],
+        ["George Washington", "American History"],
+        ["The Bill of Rights", "Understanding American Democracy"],
+        ["18", "U.S. Citizen Rights and Responsibilities"],
+        ["Secretary of Military Affairs", "The U.S. System of Government"],
+        ["1776", "American History"],
+        ["Capitalism", "Understanding American Democracy"]
     ];
     let numCorrect = 0;
     let incorrectCats = [];//here we can store the categories for the wrong questions and include links at the end of the quiz
@@ -129,7 +129,7 @@ router.route('').get(async (req, res) => {
         ind++;
     }
     console.log(numCorrect);
-    incorrectCats.filter((value, index, self) => self.indexOf(value) === index);
+    incorrectCats = incorrectCats.filter((value, index, self) => self.indexOf(value) === index);
     let modqs = [];
     let count = 0;
     for (let x of questions){
@@ -157,13 +157,13 @@ router.route('').get(async (req, res) => {
         modqs.push(newEl)
         count++;
     }
-    console.log(modqs);
+    console.log(incorrectCats);
     if (req.session.user){
         await triviaData.addScore(req.session.user.emailAddress, numCorrect);
-        return res.render('trivia', {title: "Civics Trivia Quiz", notLoggedIn: false, firstName: req.session.user.firstName, questions: questions, submitted: true, score: numCorrect, modqs})
+        return res.render('trivia', {title: "Civics Trivia Quiz", notLoggedIn: false, firstName: req.session.user.firstName, questions: questions, submitted: true, score: numCorrect, modqs, badCategories: incorrectCats})
     }
     else{
-        return res.render('trivia', {title: "Civics Trivia Quiz", notLoggedIn: true, questions: questions, submitted: true, score: numCorrect, modqs})
+        return res.render('trivia', {title: "Civics Trivia Quiz", notLoggedIn: true, questions: questions, submitted: true, score: numCorrect, modqs, badCategories: incorrectCats})
     }
 
 });
