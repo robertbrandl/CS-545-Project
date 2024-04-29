@@ -16,6 +16,7 @@ h2.underline{
     text-align: center; 
     font-weight: bold;
     text-shadow: 3px 3px 6px #110356;
+    font-size: 30pt;
     
 }
 .score {
@@ -34,6 +35,7 @@ h2.underline{
 p.nameMessage{
     color:#A2E3C4;
   }
+
 a:link {
     color:#DDCC77;
 }
@@ -113,7 +115,9 @@ input {
     color: #3C493F;
     border: 2px solid #F0F7F4;
 }
-
+li{
+    margin-bottom: 10px;
+}
 
 button {
     /* referenced https://blog.logrocket.com/how-to-style-forms-with-css-a-beginners-guide/ */
