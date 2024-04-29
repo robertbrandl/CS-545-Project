@@ -109,13 +109,13 @@ if (loginForm) {
         .then(response => response.json()) 
         .then(data => {
             spinner.classList.add('hidden');
+            console.log(data)
 
             try {
-                const jsonData = JSON.parse(data);
-                if (jsonData.status === 'success') {
+                if (data.status === 'success') {
                     window.location.href = '/';  
                 } else {
-                    throw new Error(jsonData.message);
+                    throw new Error(data.message);
                 }
             } catch (error) {
                 errorTextElement.textContent = error.message;
