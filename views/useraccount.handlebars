@@ -8,6 +8,15 @@
 <h3>Past Trivia Quiz Scores:</h3>
 <ul>
   {{#each scores}}
-    <li>{{ this }}</li>
+    <li>
+      Attempt {{this.[3]}}:
+      <br />
+      <ul>
+          <li>Quiz Score: {{ this.[0] }}</li>
+          <li>Date and Time Taken: {{ this.[1] }}</li>
+          <li>Problem Categories: {{this.[2]}}</li>
+      </ul>
+    </li>
   {{/each}}
 </ul>
+

@@ -2,7 +2,7 @@ import {users} from '../config/mongoCollections.js';
 import * as validation from "../validation.js";
 import validator from 'email-validator';
 
-const addScore = async (emailAddress, score) => {
+const addScore = async (emailAddress, score, date, cats) => {
     let email = validation.checkString(emailAddress);
     email = email.toLowerCase();
     if (validator.validate(email) === false){throw "Invalid email"}
@@ -14,7 +14,7 @@ const addScore = async (emailAddress, score) => {
     }
 
     let updatedScores = foundUser.quizScores;
-    updatedScores.push(score); 
+    updatedScores.push([score, date, cats]); 
     await userCollection.updateOne({ emailAddress: email }, { $set: { quizScores: updatedScores } });
     return await userCollection.findOne({ emailAddress: email });
 }

@@ -140,6 +140,9 @@ router
   .get(async (req, res) => {
     if (req.session.user){
         let user = await userData.getUser(req.session.user.emailAddress);
+        for (let i = 0; i < user.quizScores.length; i++) {
+          user.quizScores[i].push(i + 1);
+        }
         return res.render('useraccount', {title: "User Account", notLoggedIn: false, firstName: req.session.user.firstName, lastName: req.session.user.lastName, scores: user.quizScores});
     }
     else{

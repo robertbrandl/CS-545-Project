@@ -83,7 +83,21 @@ h4 {
     font-weight: normal;
     color: #FFFFFF;
 }
-
+h5{
+    font-weight: normal;
+    color: #EAB3B3;
+    margin-top: 0;
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
 p {
     font-size: 1.25rem;
     font-weight: normal;

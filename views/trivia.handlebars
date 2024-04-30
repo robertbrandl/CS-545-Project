@@ -27,14 +27,18 @@
         {{#each questions}}
         <div class="question">
             <p>{{this.[0]}}. {{this.[1]}}</p>
-            <input type="radio" id="answer{{@index}}_option1" name="answer{{@index}}" value="{{this.[2]}}">
-            <label for="answer{{@index}}_option1">{{this.[2]}}</label><br>
-            <input type="radio" id="answer{{@index}}_option2" name="answer{{@index}}" value="{{this.[3]}}">
-            <label for="answer{{@index}}_option2">{{this.[3]}}</label><br>
-            <input type="radio" id="answer{{@index}}_option3" name="answer{{@index}}" value="{{this.[4]}}">
-            <label for="answer{{@index}}_option3">{{this.[4]}}</label><br>
-            <input type="radio" id="answer{{@index}}_option4" name="answer{{@index}}" value="{{this.[5]}}">
-            <label for="answer{{@index}}_option4">{{this.[5]}}</label><br>
+            <h5>Category: {{this.[2]}}</h5>
+            <fieldset>
+            <legend class="visually-hidden">Answer Choices</legend>
+            <input type="radio" id="answer{{@index}}_option1" name="answer{{@index}}" value="{{this.[3]}}">
+            <label for="answer{{@index}}_option1">{{this.[3]}}</label><br>
+            <input type="radio" id="answer{{@index}}_option2" name="answer{{@index}}" value="{{this.[4]}}">
+            <label for="answer{{@index}}_option2">{{this.[4]}}</label><br>
+            <input type="radio" id="answer{{@index}}_option3" name="answer{{@index}}" value="{{this.[5]}}">
+            <label for="answer{{@index}}_option3">{{this.[5]}}</label><br>
+            <input type="radio" id="answer{{@index}}_option4" name="answer{{@index}}" value="{{this.[6]}}">
+            <label for="answer{{@index}}_option4">{{this.[6]}}</label><br>
+            </fieldset>
         </div>
         <br>
         {{/each}}
@@ -47,74 +51,78 @@
     {{#each modqs}}
         <div class="question">
             <p>{{this.[0]}}. {{this.[1]}}</p>
-            {{#if this.[2].[1]}}
-                {{#if this.[2].[2]}}
-                    <input type="radio" id="ans{{@index}}_option1_cor" name="answer{{@index}}" value="{{this.[2].[0]}}" class="correct" checked>
-                    <label for="ans{{@index}}_option1_cor" class="correct">{{this.[2].[0]}}</label><br>
-                {{else}}
-                    <input type="radio" id="ans{{@index}}_option1_cor" name="answer{{@index}}" value="{{this.[2].[0]}}" class="correct">
-                    <label for="ans{{@index}}_option1_cor" class="correct">{{this.[2].[0]}}</label><br>
-                {{/if}}
-            {{else}}
-                {{#if this.[2].[2]}}
-                    <input type="radio" id="ans{{@index}}_option1_inc" name="answer{{@index}}" value="{{this.[2].[0]}}" class="incorrect" checked>
-                    <label for="ans{{@index}}_option1_inc" class="incorrect">{{this.[2].[0]}}</label><br>
-                {{else}}
-                    <input type="radio" id="ans{{@index}}_option1_inc" name="answer{{@index}}" value="{{this.[2].[0]}}" class="incorrect">
-                    <label for="ans{{@index}}_option1_inc" class="incorrect">{{this.[2].[0]}}</label><br>
-                {{/if}}
-            {{/if}}
+            <h5>Category: {{this.[2]}}</h5>
+            <fieldset>
+            <legend class="visually-hidden">Answer Choices</legend>
             {{#if this.[3].[1]}}
                 {{#if this.[3].[2]}}
-                    <input type="radio" id="ans{{@index}}_option2_cor" name="answer{{@index}}" value="{{this.[3].[0]}}" class="correct" checked>
-                    <label for="ans{{@index}}_option2_cor" class="correct">{{this.[3].[0]}}</label><br>
+                    <input type="radio" id="ans{{@index}}_option1_cor" name="answer{{@index}}" value="{{this.[3].[0]}}" class="correct" checked>
+                    <label for="ans{{@index}}_option1_cor" class="correct">{{this.[3].[0]}}</label><br>
                 {{else}}
-                    <input type="radio" id="ans{{@index}}_option2_cor" name="answer{{@index}}" value="{{this.[3].[0]}}" class="correct">
-                    <label for="ans{{@index}}_option2_cor" class="correct">{{this.[3].[0]}}</label><br>
+                    <input type="radio" id="ans{{@index}}_option1_cor" name="answer{{@index}}" value="{{this.[3].[0]}}" class="correct">
+                    <label for="ans{{@index}}_option1_cor" class="correct">{{this.[3].[0]}}</label><br>
                 {{/if}}
             {{else}}
                 {{#if this.[3].[2]}}
-                    <input type="radio" id="ans{{@index}}_option2_inc" name="answer{{@index}}" value="{{this.[3].[0]}}" class="incorrect" checked >
-                    <label for="ans{{@index}}_option2_inc" class="incorrect">{{this.[3].[0]}}</label><br>
+                    <input type="radio" id="ans{{@index}}_option1_inc" name="answer{{@index}}" value="{{this.[3].[0]}}" class="incorrect" checked>
+                    <label for="ans{{@index}}_option1_inc" class="incorrect">{{this.[3].[0]}}</label><br>
                 {{else}}
-                    <input type="radio" id="ans{{@index}}_option2_inc" name="answer{{@index}}" value="{{this.[3].[0]}}" class="incorrect">
-                    <label for="ans{{@index}}_option2_inc" class="incorrect">{{this.[3].[0]}}</label><br>
+                    <input type="radio" id="ans{{@index}}_option1_inc" name="answer{{@index}}" value="{{this.[3].[0]}}" class="incorrect">
+                    <label for="ans{{@index}}_option1_inc" class="incorrect">{{this.[3].[0]}}</label><br>
                 {{/if}}
             {{/if}}
             {{#if this.[4].[1]}}
                 {{#if this.[4].[2]}}
-                    <input type="radio" id="ans{{@index}}_option3_cor" name="answer{{@index}}" value="{{this.[4].[0]}}" class="correct" checked>
-                    <label for="ans{{@index}}_option3_cor" class="correct">{{this.[4].[0]}}</label><br>
+                    <input type="radio" id="ans{{@index}}_option2_cor" name="answer{{@index}}" value="{{this.[4].[0]}}" class="correct" checked>
+                    <label for="ans{{@index}}_option2_cor" class="correct">{{this.[4].[0]}}</label><br>
                 {{else}}
-                    <input type="radio" id="ans{{@index}}_option3_cor" name="answer{{@index}}" value="{{this.[4].[0]}}" class="correct">
-                    <label for="ans{{@index}}_option3_cor" class="correct">{{this.[4].[0]}}</label><br>
+                    <input type="radio" id="ans{{@index}}_option2_cor" name="answer{{@index}}" value="{{this.[4].[0]}}" class="correct">
+                    <label for="ans{{@index}}_option2_cor" class="correct">{{this.[4].[0]}}</label><br>
                 {{/if}}
             {{else}}
                 {{#if this.[4].[2]}}
-                    <input type="radio" id="ans{{@index}}_option3_inc" name="answer{{@index}}" value="{{this.[4].[0]}}" class="incorrect" checked>
-                    <label for="ans{{@index}}_option3_inc" class="incorrect">{{this.[4].[0]}}</label><br>
+                    <input type="radio" id="ans{{@index}}_option2_inc" name="answer{{@index}}" value="{{this.[4].[0]}}" class="incorrect" checked >
+                    <label for="ans{{@index}}_option2_inc" class="incorrect">{{this.[4].[0]}}</label><br>
                 {{else}}
-                    <input type="radio" id="ans{{@index}}_option3_inc" name="answer{{@index}}" value="{{this.[4].[0]}}" class="incorrect">
-                    <label for="ans{{@index}}_option3_inc" class="incorrect">{{this.[4].[0]}}</label><br>
+                    <input type="radio" id="ans{{@index}}_option2_inc" name="answer{{@index}}" value="{{this.[4].[0]}}" class="incorrect">
+                    <label for="ans{{@index}}_option2_inc" class="incorrect">{{this.[4].[0]}}</label><br>
                 {{/if}}
             {{/if}}
             {{#if this.[5].[1]}}
                 {{#if this.[5].[2]}}
-                    <input type="radio" id="ans{{@index}}_option4_cor" name="answer{{@index}}" value="{{this.[5].[0]}}" class="correct" checked>
-                    <label for="ans{{@index}}_option4_cor" class="correct">{{this.[5].[0]}}</label><br>
+                    <input type="radio" id="ans{{@index}}_option3_cor" name="answer{{@index}}" value="{{this.[5].[0]}}" class="correct" checked>
+                    <label for="ans{{@index}}_option3_cor" class="correct">{{this.[5].[0]}}</label><br>
                 {{else}}
-                    <input type="radio" id="ans{{@index}}_option4_cor" name="answer{{@index}}" value="{{this.[5].[0]}}" class="correct">
-                    <label for="ans{{@index}}_option4_cor" class="correct">{{this.[5].[0]}}</label><br>
+                    <input type="radio" id="ans{{@index}}_option3_cor" name="answer{{@index}}" value="{{this.[5].[0]}}" class="correct">
+                    <label for="ans{{@index}}_option3_cor" class="correct">{{this.[5].[0]}}</label><br>
                 {{/if}}
             {{else}}
                 {{#if this.[5].[2]}}
-                    <input type="radio" id="ans{{@index}}_option4_inc" name="answer{{@index}}" value="{{this.[5].[0]}}" class="incorrect" checked>
-                    <label for="ans{{@index}}_option4_inc" class="incorrect">{{this.[5].[0]}}</label><br>
+                    <input type="radio" id="ans{{@index}}_option3_inc" name="answer{{@index}}" value="{{this.[5].[0]}}" class="incorrect" checked>
+                    <label for="ans{{@index}}_option3_inc" class="incorrect">{{this.[5].[0]}}</label><br>
                 {{else}}
-                    <input type="radio" id="ans{{@index}}_option4_inc" name="answer{{@index}}" value="{{this.[5].[0]}}" class="incorrect">
-                    <label for="ans{{@index}}_option4_inc" class="incorrect">{{this.[5].[0]}}</label><br>
+                    <input type="radio" id="ans{{@index}}_option3_inc" name="answer{{@index}}" value="{{this.[5].[0]}}" class="incorrect">
+                    <label for="ans{{@index}}_option3_inc" class="incorrect">{{this.[5].[0]}}</label><br>
                 {{/if}}
             {{/if}}
+            {{#if this.[6].[1]}}
+                {{#if this.[6].[2]}}
+                    <input type="radio" id="ans{{@index}}_option4_cor" name="answer{{@index}}" value="{{this.[6].[0]}}" class="correct" checked>
+                    <label for="ans{{@index}}_option4_cor" class="correct">{{this.[6].[0]}}</label><br>
+                {{else}}
+                    <input type="radio" id="ans{{@index}}_option4_cor" name="answer{{@index}}" value="{{this.[6].[0]}}" class="correct">
+                    <label for="ans{{@index}}_option4_cor" class="correct">{{this.[6].[0]}}</label><br>
+                {{/if}}
+            {{else}}
+                {{#if this.[6].[2]}}
+                    <input type="radio" id="ans{{@index}}_option4_inc" name="answer{{@index}}" value="{{this.[6].[0]}}" class="incorrect" checked>
+                    <label for="ans{{@index}}_option4_inc" class="incorrect">{{this.[6].[0]}}</label><br>
+                {{else}}
+                    <input type="radio" id="ans{{@index}}_option4_inc" name="answer{{@index}}" value="{{this.[6].[0]}}" class="incorrect">
+                    <label for="ans{{@index}}_option4_inc" class="incorrect">{{this.[6].[0]}}</label><br>
+                {{/if}}
+            {{/if}}
+            </fieldset>
         </div>
         <br>
         {{/each}}
@@ -122,7 +130,7 @@
             {{#if badCategories}}
             <h3>Categories You Could Improve On:</h3>
             {{#each badCategories}}
-            <li class="cats">{{this}}</li>
+            <li class="cats"><a href="/bank/#{{this.[1]}}">{{this.[0]}}</a></li>
             {{/each}}
             {{/if}}
     {{/if}}
