@@ -13,7 +13,7 @@ Welcome to our final project for CS 545, a website that allows users to assess a
 ## How to Use Our Project
 - Using our website is intuitive, the home page shows different options where you take a quiz to see how much you know about U.S. civics, or you can view the knowledge bank to study up and learn more about civics!  
 - Using the navigation bar at the top right of every page, the User can register for an account or log in to their existing account.
-  - With an account, you can take civics quizzes and have the scores saved to your account to track progress!
+  - With an account, you can take a civics trivia quiz and have the scores saved to your account to track progress!
   - Your account information, including saved quiz scores, can be found on the User Account page, found in the navigation bar once you are logged in.
 - Use the sample accounts below to act as a logged in user!
 ## Sample User Accounts
